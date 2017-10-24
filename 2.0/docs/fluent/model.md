@@ -25,7 +25,7 @@ try pet.save()
 Finds the model with the supplied identifier or returns `nil`.
 
 ```swift
-guard let pet = try Pets.find(42) else {
+guard let pet = try Pet.find(42) else {
     throw Abort.notFound
 }
 print(pet.name)
@@ -44,7 +44,7 @@ try pet.delete()
 Returns all entities for this model.
 
 ```swift
-for pet in try Pets.all() {
+for pet in try Pet.all() {
     print(pet.name)
 }
 ```
@@ -54,7 +54,7 @@ for pet in try Pets.all() {
 Returns a count of all entities for this model.
 
 ```swift
-let count = try Pets.count()
+let count = try Pet.count()
 ```
 
 ### Chunk
@@ -64,7 +64,7 @@ Returns chunked arrays of a supplied size for all of the entities for this model
 This is a great way to parse through all models of a large data set.
 
 ```swift
-try Pets.chunk(20) { pets in
+try Pet.chunk(20) { pets in
     //
 }
 ```
